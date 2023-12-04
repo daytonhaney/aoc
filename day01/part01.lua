@@ -1,18 +1,19 @@
 function Day1(filename)
-	local c = {}
 	file = io.open(filename)
 	for lines in file:lines() do
+		local calibrator = 0
+		c = {}
 		fd = lines:match("%d")
-		print(lines, fd)	
-	end
-	print("Reversed: OK")
-	newFile = io.open(filename)
-	for lines in newFile:lines() do
 		reverselines = string.reverse(lines)
-		sd = reverselines:match("%d")
-		print(reverselines, sd)
-	end
-end
+		ld = reverselines:match("%d+")
 
+
+		calibrator = calibrator + tonumber(fd .. ld)
+		print(calibrator)
+
+	end
+    calibrate = 12 + 38 + 15 + 77
+    print(calibrate)
+end
 
 Day1("example.txt")
