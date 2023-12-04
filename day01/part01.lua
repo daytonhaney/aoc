@@ -14,3 +14,5 @@ function Day1(filename)
 	end
 end
 
+
+Day1("example.txt")
