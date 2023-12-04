@@ -14,6 +14,3 @@ function Day1(filename)
 	end
 end
 
--- aoc torture for non programmers = true
-
-Day1("example.txt")

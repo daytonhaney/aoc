@@ -1,0 +1,8 @@
+{
+    "workspace.library": [
+        "${3rd}/luassert/library"
+    ],
+    "diagnostics.globals": [
+        "day1"
+    ]
+}
