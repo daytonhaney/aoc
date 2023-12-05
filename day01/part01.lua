@@ -1,4 +1,4 @@
-function Day1(filename)
+function day1_part1(filename)
 	calibrator = 0
 	file = io.open(filename)
 	for lines in file:lines() do
@@ -6,17 +6,13 @@ function Day1(filename)
 		fd = lines:match("%d")
 		reverse = string.reverse(lines)
 		ld = reverse:match("%d")
-		print(fd ..ld)
-		
+		print(fd .. ld)
+
 		calibrator = calibrator + tonumber(fd .. ld)
 		--print(calibrator)
 		print(type(calibrator), "plus")
-
 	end
-	print(" = ",calibrator)
+	print(" = ", calibrator)
 end
 
-
-
-Day1("input.txt")
-
+day1_part1("input.txt")
