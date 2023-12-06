@@ -1,55 +1,29 @@
 function day1_part2(filename)
+	t = {}
 	calibrator = 0
+
 	file = io.open(filename)
-	for lines in file:lines() do
-		c = {}
-		--		print(lines)
-		fd = lines:match("%d")
-		reverse = string.reverse(lines)
-		ld = reverse:match("%d")
-		--		print(fd .. ld)
 
-		calibrator = calibrator + tonumber(fd .. ld)
-
-		local vals = {
-			"one",
-			"two",
-			"three",
-			"four",
-			"five",
-			"six",
-			"seven",
-			"eight",
-			"nine",
-		}
-
-		ints = {
-			1,
-			2,
-			3,
-			4,
-			5,
-			6,
-			7,
-			8,
-			9,
-		}
-
-		--for i = 1, #vals and #ints do
-		---	print(lines, vals[i], ints[i]) end
-		swap_one = lines:gsub("one", "1")
-		swap_two = swap_one:gsub("two", "2")
-		swap_three = swap_two:gsub("three", "3")
-		swap_four = swap_three:gsub("four", "4")
-		swap_five = swap_four:gsub("five", "5")
-		swap_six = swap_five:gsub("six", "6")
-		swap_seven = swap_six:gsub("seven", "7")
-		swap_eight = swap_seven:gsub("eight", "8")
-		swap_nine_swapped_up = swap_eight:gsub("nine", "9")
-
-		x = lines:gsub("one", " ")
-		print("this is the swap for one -->", swap_nine_swapped_up)
+	for line in file:lines() do
+		main = true
+		-- only need to check for strings tbh %d
+		one = line:gsub("one", "one1one")
+		two = one:gsub("two", "two2two")
+		three = two:gsub("three", "three3three")
+		four = three:gsub("four", "four4four")
+		five = four:gsub("five", "five5five")
+		six = five:gsub("six", "six6six")
+		seven = six:gsub("seven", "seven7seven")
+		eight = seven:gsub("eight", "eight8eight")
+		nine = eight:gsub("nine", "nine9nine")
+		fd = nine:match("%d")
+		reverse_list = string.reverse(nine)
+		sd = reverse_list:match("%d")
+		print(nine, "\n\nfirst digit:", fd, "\n\nsecond digit:", sd)
+		calibrator = calibrator + tonumber(fd .. sd)
 	end
+
+	print("\n", "total: ", calibrator)
 end
 
 day1_part2("input.txt")
