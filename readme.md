@@ -1,6 +1,6 @@
-aoc 2023
+advent-of-code 2023
 
-##### lua:
+#### lua:
 
       https://gitspartv.github.io/lua-patterns/
 
